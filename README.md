@@ -19,3 +19,7 @@ To distribute the app correctly you need to give the entire dist folder, you can
 3. cd ../ && make build-app
 4. make compile
 5. ./dist/myapp
+
+## How to build
+Run make compile-open for to compile normally
+Run make package-mac to make a .app executable for mac
