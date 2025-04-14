@@ -28,3 +28,15 @@ console.log(`Server started. UI available at ${url}`);
 })();
 
 // The Bun.serve call keeps the process running
+
+process.on('SIGINT', () => {
+  console.log('\\nGracefully shutting down from SIGINT (Ctrl+C)');
+  server.stop(true); // true = exit process after stopping
+  // process.exit(0); // Alternative if server.stop(true) doesn't work as expected
+});
+
+process.on('SIGTERM', () => {
+  console.log('Gracefully shutting down from SIGTERM');
+  server.stop(true); // true = exit process after stopping
+  // process.exit(0); // Alternative if server.stop(true) doesn't work as expected
+});
