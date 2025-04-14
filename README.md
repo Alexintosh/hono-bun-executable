@@ -1,4 +1,4 @@
-# How to use
+## How to use
 
 1. Have bun installed
 2. cd app && bun install
