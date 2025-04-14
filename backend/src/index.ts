@@ -10,7 +10,17 @@ import { join } from 'node:path'
 console.log(path.dirname('./'))
 console.log('Current working directory:', process.cwd());
 console.log('Executable directory:', path.dirname(process.execPath));
-const appDistPath = join(path.dirname(process.execPath), './app')
+
+
+let appDistPath
+if (process.env.IS_PACKAGED === 'true') {
+    // Mac package path
+    appDistPath = join(path.dirname(process.execPath), '../Resources/app')
+} else {
+    // Normal path
+    appDistPath = join(path.dirname(process.execPath), './app')
+    
+}
 
 console.log(path.resolve(appDistPath))
 
