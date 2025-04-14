@@ -10,7 +10,7 @@ import { join } from 'node:path'
 console.log(path.dirname('./'))
 console.log('Current working directory:', process.cwd());
 console.log('Executable directory:', path.dirname(process.execPath));
-const appDistPath = join(path.dirname(process.execPath), './app/dist')
+const appDistPath = join(path.dirname(process.execPath), './app')
 
 console.log(path.resolve(appDistPath))
 
